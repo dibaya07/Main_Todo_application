@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { supabase } from './utils/supabase'
+import { supabase } from '../utils/supabase'
 
 export default function App() {
   const [todos, setTodos] = useState([])
@@ -21,13 +21,11 @@ export default function App() {
   }
 
   return (
-    <div className="bg-gray-500">
-      {/* <title> */}
-        <h1>Todo Application with Supabase</h1>
-      {/* </title> */}
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Enter your task.."/>
-        <button>Submit</button>
+    <div className='flex  flex-col items-center h-screen'>
+        <h1 className='text-4xl font-semibold my-16'>Todo Application with Supabase</h1>
+      <form onSubmit={handleSubmit} className='border border-solid border-[#4a4a4a] bg-[#e1e1e1] p-5 rounded-2xl space-x-4'>
+        <input type="text" placeholder="Enter your task.." className='outline-none rounded-md p-2.5'/>
+        <button className='hover:bg-[#00360b] hover:text-white font-medium p-2 rounded-xl '>Submit</button>
       </form>
     </div>
   )
